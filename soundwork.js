@@ -1,45 +1,33 @@
 var song;
-var sliderVolume;
-var sliderRate;
-var sliderPan;
-var buttonP;
-var buttonS;
+var button;
+var amp;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    song = loadSound("mario.mp3");
-    sliderVolume = createSlider(0, 1, 0.5, 0.1);
-    sliderRate = createSlider(0, 2, 1, 0.1);
-    sliderPan = createSlider(-1, 1, 0, 0.5);
-    buttonS = createButton();
-    buttonS.mousePressed(toggleButton2);
-    buttonP = createButton();
-    buttonP.mousePressed(toggleButton);
+    song = loadSound("mario.mp3", loadSong);
+    amp = new p5.Amplitude();
 }
 
-function toggleButton2() {
-    if (song.isPlaying()) {
-        song.stop();
-        buttonS.html("Play From The Start");
-    } else {
+function loadSong() {
+    button = createButton("Play");
+    button.mousePressed(togglePlayPause);
+}
+
+function togglePlayPause() {
+    if (!song.isPlaying()) {
         song.play();
-        buttonS.html("Stop now");
-    }
-}
-
-function toggleButton() {
-    if (song.isPlaying) {
-        buttonP.html("Pause");
+        button.html("Pause");
+    } else {
         song.pause();
-    } else {
-        buttonP.html("Play");
-        song.play();
+        button.html("Play");
     }
 }
 
 function draw() {
-    background(song.currentTime() * 20, 100, 0);
-    song.setVolume(sliderVolume.value());
-    song.rate(sliderRate.value());
-    song.pan(sliderPan.value());
+    background(255);
+    var size = amp.getLevel();
+    var diamX = map(size, 0, 1, 200, 800);
+    translate(windowWidth / 2, windowHeight / 2);
+    fill(0, 0, 255);
+    ellipse(0, 0, diamX, diamX);
 }
