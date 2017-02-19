@@ -1,14 +1,14 @@
 var song;
 
-function preLoad() {
-    song = loadsound("mario.mp3");
-}
-
 function setup() {
     createCanvas(windowWidth, windowHeight);
+    song = loadSound("mario.mp3", loaded);
+}
+
+function loaded() {
     song.play();
 }
 
 function draw() {
-    background(0);
+    background(random(255), random(255), random(255));
 }
