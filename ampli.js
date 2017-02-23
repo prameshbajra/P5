@@ -6,13 +6,13 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
     mic = new p5.AudioIn();
     mic.start();
-    background(0);
 }
 
 function draw() {
-    background(0);
-    points.push(mic.getLevel());
-    stroke(255);
+    background(255);
+    var level = mic.getLevel();
+    points.push(level);
+    stroke(random(1, 255), random(1, 255), random(1, 255));
     noFill();
     beginShape();
     for (var i = 0; i < points.length; i++) {
