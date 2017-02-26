@@ -1,26 +1,38 @@
-var f;
-var particle = [];
+var font;
+var vehicles = [];
 
 function preload() {
-    f = loadFont("bauhs93.ttf");
+    font = loadFont('BAUHS93.ttf');
 }
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    textFont(f);
-    var points = f.textToPoints("Pramesh", 350, 430, 300);
+    // textFont(font);
+    // textSize(192);
+    // fill(255);
+    // noStroke();
+    // text('train', 100, 200);
+
+    var points = font.textToPoints("Pramesh", 550, 500, 400, {
+        sampleFactor: 0.1
+    });
+
     for (var i = 0; i < points.length; i++) {
         var pt = points[i];
-        var particles = new Particles(pt.x, pt.y);
-        particle.push(particles);
+        var vehicle = new Vehicle(pt.x, pt.y);
+        vehicles.push(vehicle);
+        // stroke(255);
+        // strokeWeight(8);
+        // point(pt.x, pt.y);
     }
 }
 
 function draw() {
-    background(0);
-    for (var i = 0; i < particle.length; i++) {
-        var value = particle[i];
-        value.update();
-        value.show();
+    background(255);
+    for (var i = 0; i < vehicles.length; i++) {
+        var v = vehicles[i];
+        v.behaviors();
+        v.update();
+        v.show();
     }
 }
