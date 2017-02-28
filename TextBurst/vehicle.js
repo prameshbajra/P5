@@ -12,10 +12,8 @@ Vehicle.prototype.behaviors = function () {
     var arrive = this.arrive(this.target);
     var mouse = createVector(mouseX, mouseY);
     var flee = this.flee(mouse);
-
     arrive.mult(1);
     flee.mult(5);
-
     this.applyForce(arrive);
     this.applyForce(flee);
 }
