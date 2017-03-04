@@ -1,4 +1,5 @@
-var velocity = 5;
+var velocityX = 5,
+    velocityY = 5;
 var x = 20,
     y = 20;
 
@@ -8,9 +9,14 @@ function setup() {
 
 function draw() {
     background(0);
-    x += velocity;
+    x += velocityX;
+    y += velocityY;
     if (x > width || x < 0) {
-        velocity *= -1;
+        velocityX *= -1;
     }
-    ellipse(x, y, 20, 20);
+    if (y > height || y < 0) {
+        velocityY *= -1;
+    }
+    fill(255, 0, 0);
+    ellipse(x, y, 30, 30);
 }

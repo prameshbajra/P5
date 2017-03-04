@@ -1,6 +1,6 @@
-var sizeX = 640;
-var sizeY = 640;
-var vel = 1;
+var vel = 5,
+    sizeX = 0,
+    sizeY = 0;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -8,9 +8,10 @@ function setup() {
 
 function draw() {
     background(0);
-    translate(windowWidth / 2, windowHeight / 2);
-    sizeX -= vel;
-    sizeY -= vel;
-    ellipse(0, 0, sizeX, sizeY);
-    vel += 0.1;
+    ellipse(width / 2, height / 2, sizeX, sizeY);
+    sizeX += vel;
+    sizeY += vel;
+    if (sizeX >= windowWidth || sizeY >= windowHeight || sizeX <= 0) {
+        vel *= -1;
+    }
 }
