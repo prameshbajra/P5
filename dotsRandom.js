@@ -1,3 +1,5 @@
+// Currently some what clutterly made .... fix later if need be ...
+
 var count = 0;
 
 function setup() {

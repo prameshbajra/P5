@@ -1,3 +1,4 @@
+// Make velocity change accordingly later ...
 var vel = 5,
     sizeX = 0,
     sizeY = 0;
