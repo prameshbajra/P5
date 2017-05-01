@@ -1,6 +1,10 @@
 let sizeOfCube = 400,
-    timer = 1000;
+    timer = 1000,
+    img;
 
+function preload() {
+    img = loadImage("olo/fgfg.jpg");
+}
 
 function setup() {
     createCanvas(windowWidth, windowHeight, WEBGL);
@@ -12,9 +16,10 @@ function draw() {
     if (sizeOfCube > 100) {
         sizeOfCube -= 10;
     }
-    rotateX(frameCount * 0.01);
-    rotateY(frameCount * 0.01);
-    rotateZ(frameCount * 0.01);
+    rotateX(frameCount * 0.1);
+    rotateY(frameCount * (0.1));
+    rotateZ(frameCount * 0.1);
+    texture(img);
     box(70, 70, 70);
     timer -= 10;
     if (timer == 0) {
