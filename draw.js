@@ -1,3 +1,10 @@
+function preload() {
+    let imageLoad1 = loadImage("olo/asdf.jpg");
+    let imageLoad2 = loadImage("olo/fgfg.jpg");
+    let imageLoad3 = loadImage("olo/qwer.jpg");
+    let imageLoad4 = loadImage("olo/zxcv.jpg");
+}
+
 function setup() {
     createCanvas(windowWidth, windowHeight, WEBGL);
     colorMode(RGB, 1);
