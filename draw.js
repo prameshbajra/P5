@@ -12,6 +12,7 @@ function setup() {
 }
 
 function draw() {
+    translate(-mouseX * 0.2, mouseY * 0.1, 0);
     background(255);
     strokeWeight(4);
     scale(90);
