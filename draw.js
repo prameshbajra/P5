@@ -1,12 +1,10 @@
-let toSize = 200;
-
 function setup() {
     createCanvas(windowWidth, windowHeight, WEBGL);
     colorMode(RGB, 1);
+    frameRate(60);
 }
 
 function draw() {
-    translate(20, 20, toSize);
     background(255);
     strokeWeight(4);
     scale(90);
@@ -66,8 +64,4 @@ function draw() {
     vertex(0, 1, 0);
     vertex(1, 1, 0);
     endShape(CLOSE);
-
-    if (toSize > 50) {
-        toSize -= 10;
-    }
 }
