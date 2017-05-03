@@ -23,6 +23,8 @@ function draw() {
     box(70, 70, 70);
     timer -= 10;
     if (timer == 0) {
+        clear();
+        background(255);
         noLoop();
     }
 }
