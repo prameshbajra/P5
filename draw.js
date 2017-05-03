@@ -17,7 +17,9 @@ function draw() {
     strokeWeight(4);
     scale(90);
     rotateX(mouseX * 0.01);
+    console.log(mouseX);
     rotateY(mouseY * 0.01);
+    console.log(mouseY);
     strokeWeight(30);
     // Back side view ...
     beginShape();

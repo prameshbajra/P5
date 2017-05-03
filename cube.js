@@ -25,6 +25,7 @@ function draw() {
     if (timer == 0) {
         clear();
         background(255);
+        cuber();
         noLoop();
     }
 }
