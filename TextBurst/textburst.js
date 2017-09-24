@@ -13,7 +13,7 @@ function setup() {
     // noStroke();
     // text('train', 100, 200);
 
-    var points = font.textToPoints("Diya", 550, 500, 400, {
+    var points = font.textToPoints("Shrihesh", 100, 400, 400, {
         sampleFactor: 0.1
     });
 
