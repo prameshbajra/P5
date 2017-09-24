@@ -13,4 +13,4 @@ Collection of all P5.js works.
     
 	     >> HTML and JAVASCRIPT files have common names to avoid confusion.
 
-         >> To run "TEXTBURST" your need localhost server. (For eg: XAMPP(APACHE SERVER) in windows would do!)
+         >> To run "TEXTBURST" and some other files your need localhost server. (For eg: XAMPP(APACHE SERVER) in windows would do!)

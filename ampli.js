@@ -9,7 +9,7 @@ function setup() {
 }
 
 function draw() {
-    background(255);
+    background(255, 255, 0);
     var level = mic.getLevel();
     points.push(level);
     stroke(random(1, 255), random(1, 255), random(1, 255));
